@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_home"
+    app:startDestination="@id/libraryFragment"
+    tools:ignore="UnusedNavigation">
+
+    <fragment
+        android:id="@+id/libraryFragment"
+        android:name="com.vedraj360.androlibs.ui.library.LibraryFragment"
+        android:label="library_fragment"
+        tools:layout="@layout/library_fragment">
+        <action
+            android:id="@+id/action_libraryFragment_to_showLibrary"
+            app:destination="@id/showLibrary" />
+    </fragment>
+    <fragment
+        android:id="@+id/showLibrary"
+        android:name="com.vedraj360.androlibs.ui.librarywebview.ShowLibrary"
+        android:label="show_library_layout"
+        tools:layout="@layout/show_library_layout">
+        <argument
+            android:name="library"
+            app:argType="com.vedraj360.androlibs.models.Library" />
+    </fragment>
+</navigation>

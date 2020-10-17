@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_about"
+    app:startDestination="@id/aboutFragment2"
+    tools:ignore="UnusedNavigation">
+    <fragment
+        android:id="@+id/aboutFragment2"
+        android:name="com.vedraj360.androlibs.ui.otherfragmets.AboutFragment"
+        android:label="about_layout"
+        tools:layout="@layout/about_layout" />
+</navigation>

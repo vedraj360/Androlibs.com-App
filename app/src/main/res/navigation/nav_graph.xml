@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/libraryFragment">
+    <fragment
+        android:id="@+id/libraryFragment"
+        android:name="com.vedraj360.androlibs.ui.library.LibraryFragment"
+        android:label="library_fragment"
+        tools:layout="@layout/library_fragment">
+        <action
+            android:id="@+id/action_libraryFragment_to_showLibrary"
+            app:destination="@id/showLibrary"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/showLibrary"
+        android:name="com.vedraj360.androlibs.ui.librarywebview.ShowLibrary"
+        android:label="show_library_layout"
+        tools:layout="@layout/show_library_layout">
+        <argument
+            android:name="searchValue"
+            android:defaultValue="main"
+            app:argType="string" />
+        <argument
+            android:name="library"
+            app:argType="com.vedraj360.androlibs.models.Library" />
+    </fragment>
+    <fragment
+        android:id="@+id/vedxFragment"
+        android:name="com.vedraj360.androlibs.ui.otherfragmets.VedxFragment"
+        android:label="vedx_layout"
+        tools:layout="@layout/vedx_layout" />
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="com.vedraj360.androlibs.ui.otherfragmets.AboutFragment"
+        android:label="about_layout"
+        tools:layout="@layout/about_layout" />
+    <fragment
+        android:id="@+id/favouriteFragment"
+        android:name="com.vedraj360.androlibs.ui.favourite.FavouriteFragment"
+        android:label="favourite_layout"
+        tools:layout="@layout/favourite_layout">
+        <action
+            android:id="@+id/action_favouriteFragment_to_showLibrary"
+            app:destination="@id/showLibrary" />
+    </fragment>
+</navigation>
