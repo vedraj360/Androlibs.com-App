@@ -1,5 +1,5 @@
 
-# androlibs.com-app
+# Androilib App (https://androlibs.com) 🔥❤❤🔥😎
 Android App for Androlibs.com
 
 Androlibs is best destination to get the android libraries in the world. Developers can find libraries or can submit on it.
@@ -8,7 +8,7 @@ Androlibs is best destination to get the android libraries in the world. Develop
 This Application is developed Kotlin. It use modern day architecture pattern MVVM.
 It also uses Coroutines, Paging, Navigation components ect.
 
-You can use this in your projects but currently API is not giving as I am working on it.
+You can use this in your projects but currently API is not given as I am working on it.
 
 
 ##
