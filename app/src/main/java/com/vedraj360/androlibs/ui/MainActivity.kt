@@ -105,6 +105,9 @@ class MainActivity : AppCompatActivity() {
                 }
             }
 
+            // this is back stack like youtube. when use navigate to different fragment it adds to the stack. and when
+             // user pressed back the current top is removed and new is navigated.                                                                
+                                                                             
             if (needToAddToBackStack) {
                 if (!fragmentBackStack.contains(destination.id)) {
                     fragmentBackStack.add(destination.id)
