@@ -10,18 +10,32 @@ import java.io.IOException
 
 const val TAG = "AndroidPagingSource"
 
+/* This class creates paging source for the required API */
+
 class AndrolibsPagingSource(private val libraryApi: LibraryApi, private val query: String = "") :
     PagingSource<String, Library>() {
     private var direction = ""
     var prevKey = ""
     var nextKey = ""
-    override suspend fun load(params: LoadParams<String>): LoadResult<String, Library> {
+
+        // It uses suspended function so we can call this in coroutuine or in another suspended function.
+
+       override suspend fun load(params: LoadParams<String>): LoadResult<String, Library> {
+        
 //        Log.e(TAG, "load:  ${params.key}")
 //        Log.e(TAG, "load:  ${params.loadSize}")
-
 //        Log.e(TAG, "direction: $direction ")
+           
         if (query.isNotBlank()) {
 //            Log.e(TAG, "load: query $query")
+            
+            /* The API have cursor base implementation of the pages
+            
+               -> To move forword it have next param    
+               -> To move backword it have previous param
+               
+            */
+            
             return try {
                 val response: AndrolibModel = if (params.key != null) {
                     libraryApi.getLibraryNext(params.key.toString(), params.loadSize)
@@ -30,12 +44,14 @@ class AndrolibsPagingSource(private val libraryApi: LibraryApi, private val quer
                 }
 //                Log.e(TAG, "load: $response")
                 val repos = response.libraries
+                
+                // This check if response have next param or previous param.
                 if (response.hasNext) {
                     direction = "next"
-
                 } else if (response.hasPrevious) {
                     direction = "previous"
                 }
+          
                 LoadResult.Page(
                     data = repos,
                     prevKey = if (response.hasPrevious) response.previous else null,
