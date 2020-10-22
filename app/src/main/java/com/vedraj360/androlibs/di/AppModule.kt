@@ -16,9 +16,12 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton
 
+/* It is used to add dependency Injection using HILT */
+
 @InstallIn(ApplicationComponent::class)
 @Module
 object AppModule {
+    // This is a retrofit provider. This tells Hilt how to use Retrofit object when called. 
     @Provides
     @Singleton
     fun providerRetrofit(@ApplicationContext app: Context): Retrofit =
@@ -27,11 +30,15 @@ object AppModule {
             .client(okHttp(app))
             .build()
 
+    // This is a LibraryApi provider. This genetrates required classes to provide LibraryApi object when called.
+    
     @Provides
     @Singleton
     fun provideAndroLibsApi(retrofit: Retrofit): LibraryApi =
         retrofit.create(LibraryApi::class.java)
 
+    // This provieds Room database instance when called. 
+    
     @Provides
     @Singleton
     fun provideLibraryDatabase(
@@ -46,6 +53,5 @@ object AppModule {
     @Singleton
     @Provides
     fun provideLibraryDao(db: LibraryDatabase) = db.getLibraryDao()
-
 
 }
