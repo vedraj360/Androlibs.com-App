@@ -2,7 +2,7 @@
 # androlibs.com-app
 Android App for Androlibs.com
 
-Androlibs is best destination to get the android libraries in the world. Deveolpers can find libraries or can submit on it.
+Androlibs is best destination to get the android libraries in the world. Developers can find libraries or can submit on it.
 
 # Contents
 This Application is developed Kotlin. It use modern day architecture pattern MVVM.
