@@ -1,5 +1,5 @@
 
-# Androilib App (https://androlibs.com) 🔥❤❤🔥😎
+# Androlibs App (https://androlibs.com) 🔥❤❤🔥😎
 Android App for Androlibs.com
 
 Androlibs is best destination to get the android libraries in the world. Developers can find libraries or can submit on it.
